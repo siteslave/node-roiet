@@ -13,5 +13,9 @@
     "vendor",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "lumx": "~0.3.61",
+    "angular-ui-router": "~0.2.15"
+  }
 }
