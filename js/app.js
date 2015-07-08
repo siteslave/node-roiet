@@ -3,7 +3,8 @@ angular.module('app', [
     'lumx', 'ui.router',
     'app.controller.SettingsCtrl',
     'app.service.Config',
-    'app.controller.UsersCtrl'
+    'app.controller.UsersCtrl',
+    'app.controller.UserNewCtrl'
 ])
 .config(function ($stateProvider, $urlRouterProvider) {
 
@@ -23,5 +24,10 @@ angular.module('app', [
                 url: '/settings',
                 templateUrl: 'templates/settings.html',
                 controller: 'SettingsCtrl'
+            })
+            .state('new-user', {
+                url: '/users-new',
+                templateUrl: 'templates/user-new.html',
+                controller: 'UserNewCtrl'
             })
     });
