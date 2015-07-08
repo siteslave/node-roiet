@@ -31,9 +31,12 @@ angular.module('app.controller.SettingsCtrl', [
 
         $scope.save = function () {
 
-            $scope.config.password = Encrypt.encrypt($scope.config.password);
+            var oldPass = $scope.config.password;
 
+            $scope.config.password = Encrypt.encrypt($scope.config.password);
             json.writeFileSync(configPath, $scope.config);
+
+            $scope.config.password = oldPass;
 
         }
     });
