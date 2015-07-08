@@ -1,0 +1,23 @@
+{
+  "name": "App",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "window": {
+    "toolbar": true,
+    "frame": true,
+    "width": 1000,
+    "height": 480,
+    "position": "center"
+  },
+  "dependencies": {
+    "jsonfile": "^2.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
