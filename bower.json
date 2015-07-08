@@ -1,0 +1,17 @@
+{
+  "name": "App",
+  "version": "0.0.0",
+  "homepage": "https://github.com/siteslave/node-roiet",
+  "authors": [
+    "Satit Rianpit <rianpit@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ]
+}
