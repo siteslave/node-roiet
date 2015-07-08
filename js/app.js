@@ -1,7 +1,9 @@
 
 angular.module('app', [
     'lumx', 'ui.router',
-    'app.controller.SettingsCtrl'
+    'app.controller.SettingsCtrl',
+    'app.service.Config',
+    'app.controller.UsersCtrl'
 ])
 .config(function ($stateProvider, $urlRouterProvider) {
 
@@ -14,7 +16,8 @@ angular.module('app', [
             })
             .state('users', {
                 url: '/users',
-                templateUrl: 'templates/users.html'
+                templateUrl: 'templates/users.html',
+                controller: 'UsersCtrl'
             })
             .state('settings', {
                 url: '/settings',

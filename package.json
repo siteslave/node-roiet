@@ -11,7 +11,9 @@
     "position": "center"
   },
   "dependencies": {
-    "jsonfile": "^2.2.1"
+    "jsonfile": "^2.2.1",
+    "knex": "^0.8.6",
+    "mysql": "^2.7.0"
   },
   "devDependencies": {},
   "scripts": {
