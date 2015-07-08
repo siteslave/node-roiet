@@ -1,1 +1,32 @@
-Settings
+<div flex-container="row" flex-gutter="24">
+    <div flex-item>
+        <lx-text-field label="Host">
+            <input type="text" ng-model="config.host">
+        </lx-text-field>
+    </div>
+
+    <div flex-item>
+        <lx-text-field label="Database">
+            <input type="text" ng-model="config.database">
+        </lx-text-field>
+    </div>
+</div>
+
+<div flex-container="row" flex-gutter="24">
+    <div flex-item>
+        <lx-text-field label="Username">
+            <input type="text" ng-model="config.user">
+        </lx-text-field>
+    </div>
+
+    <div flex-item>
+        <lx-text-field label="Password">
+            <input type="password" ng-model="config.password">
+        </lx-text-field>
+    </div>
+</div>
+
+<button class="btn btn--l btn--green btn--raised" lx-ripple
+        ng-click="save()">
+    Save
+</button>

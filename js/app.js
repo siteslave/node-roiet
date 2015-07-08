@@ -1,5 +1,8 @@
 
-angular.module('app', ['lumx', 'ui.router'])
+angular.module('app', [
+    'lumx', 'ui.router',
+    'app.controller.SettingsCtrl'
+])
 .config(function ($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise('/');
@@ -15,6 +18,7 @@ angular.module('app', ['lumx', 'ui.router'])
             })
             .state('settings', {
                 url: '/settings',
-                templateUrl: 'templates/settings.html'
+                templateUrl: 'templates/settings.html',
+                controller: 'SettingsCtrl'
             })
     });

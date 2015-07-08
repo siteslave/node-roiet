@@ -22,3 +22,33 @@ npm init -y
 
 # รันคำสั่ง  `nw .`
 
+
+# Install lumx
+
+### create bower.json
+
+```
+bower init
+```
+
+### create .bowerrc
+
+```
+{
+  "directory": "vendor"
+}
+```
+
+### Install lumx
+
+```
+bower install lumx --save
+```
+
+# Install ui-router
+
+```
+bower install angular-ui-router --save
+```
+
+
