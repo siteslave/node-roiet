@@ -16,6 +16,15 @@ angular.module('app.service.UserServ', [])
 
                 return q.promise;
 
+            },
+
+            save: function (data) {
+                //.. sql
+
+            },
+
+            remove: function (id) {
+                // .. sql
             }
         }
     });

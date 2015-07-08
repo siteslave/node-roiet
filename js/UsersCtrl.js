@@ -14,6 +14,14 @@ angular.module('app.controller.UsersCtrl', [
         }, function (err) {
             // .. error
             console.log(err);
-        })
+        });
+
+        $scope.save = function () {
+            UserServ.save(data);
+        }
+
+        $scope.remove = function (id) {
+            UserServ.remove(id);
+        }
 
     });

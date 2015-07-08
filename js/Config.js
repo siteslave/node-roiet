@@ -1,11 +1,12 @@
 
-angular.module('app.service.Config', [])
-.factory('Config', function () {
+angular.module('app.service.Config', ['app.service.Encrypt'])
+.factory('Config', function (Encrypt) {
 
         var gui = require('nw.gui');
 
         var path = require('path');
         var fs = require('fs');
+
 
         var json = require('jsonfile');
 
@@ -20,7 +21,7 @@ angular.module('app.service.Config', [])
                         host: config.host,
                         database: config.database,
                         user: config.user,
-                        password: config.password
+                        password: Encrypt.decrypt(config.password)
                     },
                     pool: {
                         min: 5,
@@ -31,6 +32,7 @@ angular.module('app.service.Config', [])
             getConfigPath: function () {
                 return configPath;
             }
+
         }
 
     });
