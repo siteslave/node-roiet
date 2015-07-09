@@ -6,7 +6,10 @@ angular.module('app', [
     'app.controller.UsersCtrl',
     'app.controller.UserNewCtrl',
     'app.controller.UserEditCtrl',
-    'app.service.UserEditServ'
+    'app.service.UserEditServ',
+    'app.controller.MainCtrl',
+    'app.service.MainServ',
+    'app.filter.toThaiDate'
 ])
 .config(function ($stateProvider, $urlRouterProvider) {
 
@@ -15,7 +18,8 @@ angular.module('app', [
         $stateProvider
             .state('main', {
                 url: '/',
-                templateUrl: 'templates/main.html'
+                templateUrl: 'templates/main.html',
+                controller: 'MainCtrl'
             })
             .state('users', {
                 url: '/users',
