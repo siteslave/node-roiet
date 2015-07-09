@@ -39,7 +39,7 @@
                 <a href="#/user-edit/{{ u.user_name }}" class="btn btn--m btn--blue btn--icon" lx-ripple>
                     <i class="mdi mdi-account-check"></i>
                 </a>
-                <button class="btn btn--m btn--red btn--icon" lx-ripple>
+                <button ng-click="remove($index, u.user_name)" class="btn btn--m btn--red btn--icon" lx-ripple>
                     <i class="mdi mdi-account-remove"></i>
                 </button>
             </td>

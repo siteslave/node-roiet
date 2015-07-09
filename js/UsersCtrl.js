@@ -4,7 +4,7 @@
 angular.module('app.controller.UsersCtrl', [
     'app.service.UserServ'
 ])
-.controller('UsersCtrl', function ($scope, UserServ) {
+.controller('UsersCtrl', function ($scope, UserServ, LxNotificationService) {
 
     UserServ.getUsers()
         .then(function (rows) {
@@ -16,12 +16,24 @@ angular.module('app.controller.UsersCtrl', [
             console.log(err);
         });
 
-        $scope.save = function () {
-            UserServ.save(data);
-        }
+        $scope.remove = function (idx, username) {
+            // LxNotificationService.confirm
+            // (title, message, {ok: 'xx', cancel: 'yyy'}, function (res) {})
+            LxNotificationService.confirm('ยืนยันการลบ',
+                'คุณต้องการลบรายการนี้ ['+ username +'] ใช่หรือไม่?',
+                {ok: 'ตกลง', cancel: 'ยกเลิก'}, function (res) {
+                    if (res) {
+                        // Delete
+                        UserServ.remove(username)
+                            .then(function () {
+                                $scope.users.splice(idx, 1);
+                            }, function (err) {
+                                alert('Error');
+                                console.log(err);
+                            })
 
-        $scope.remove = function (id) {
-            UserServ.remove(id);
+                    }
+                });
         }
 
     });

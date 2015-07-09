@@ -1,7 +1,7 @@
 // Controller
 angular.module('app.controller.UserEditCtrl', [])
 
-.controller('UserEditCtrl', function ($scope, $stateParams, UserEditServ) {
+.controller('UserEditCtrl', function ($scope, $state, $stateParams, UserEditServ) {
         // #/user-edit/test
         UserEditServ.getDetail($stateParams.username)
             .then(function (user) { // user == rows[0]
@@ -30,6 +30,8 @@ angular.module('app.controller.UserEditCtrl', [])
                 UserEditServ.save($stateParams.username, cryptPass)
                     .then(function () {
                         alert('Success');
+                        // Redirect to #/users
+                        $state.go('users');
                     }, function (err) {
                         console.log(err);
                         alert('Error');
