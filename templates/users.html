@@ -6,7 +6,12 @@
 
         <div class="data-table-header__actions">
 
+            <lx-search-filter model="query" filter-width="100%" placeholder="ค้นหา...">
+
+            </lx-search-filter>
+
             <lx-dropdown position="right" over-toggle="true">
+
                 <button class="btn btn--l btn--black btn--icon" lx-ripple lx-dropdown-toggle>
                     <i class="mdi mdi-dots-vertical"></i>
                 </button>
@@ -32,7 +37,7 @@
 
         <tbody>
 
-        <tr ng-repeat="u in users">
+        <tr ng-repeat="u in users | filter: query">
             <td></td>
             <td>{{ u.user_name }}</td>
             <td>
