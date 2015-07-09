@@ -22,6 +22,25 @@ angular.module('app.service.UserEditServ', [])
                     });
 
                 return q.promise;
+            },
+
+            save: function (username, password) {
+                var q = $q.defer();
+                // UPDATE web_user SET user_password=password
+                // WHERE user_name=username
+                db('web_user')
+                    .update({
+                        user_password: password
+                    })
+                    .where('user_name', username)
+                    .then(function () {
+                        q.resolve();
+                    })
+                    .catch(function (err) {
+                        q.reject(err);
+                    });
+
+                return q.promise;
             }
         }
     });
