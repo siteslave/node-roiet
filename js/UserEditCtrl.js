@@ -1,10 +1,19 @@
 // Controller
 angular.module('app.controller.UserEditCtrl', [])
 
-.controller('UserEditCtrl', function ($scope, $stateParams) {
+.controller('UserEditCtrl', function ($scope, $stateParams, UserEditServ) {
         // #/user-edit/test
-        $scope.username = $stateParams.username;
+        UserEditServ.getDetail($stateParams.username)
+            .then(function (user) { // user == rows[0]
+                // Success
 
-        // Get database
+                $scope.username = user.user_name;
+
+
+            }, function (err) {
+                // Error
+                alert('Error');
+                console.log(err);
+            })
 
     });

@@ -5,7 +5,8 @@ angular.module('app', [
     'app.service.Config',
     'app.controller.UsersCtrl',
     'app.controller.UserNewCtrl',
-    'app.controller.UserEditCtrl'
+    'app.controller.UserEditCtrl',
+    'app.service.UserEditServ'
 ])
 .config(function ($stateProvider, $urlRouterProvider) {
 
