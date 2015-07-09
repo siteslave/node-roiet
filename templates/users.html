@@ -25,6 +25,7 @@
         <tr class="data-table__selectable-row">
             <th></th>
             <th>ชื่อผู้ใช้งาน</th>
+            <th>#</th>
 
         </tr>
         </thead>
@@ -34,6 +35,14 @@
         <tr ng-repeat="u in users">
             <td></td>
             <td>{{ u.user_name }}</td>
+            <td>
+                <button class="btn btn--m btn--blue btn--icon" lx-ripple>
+                    <i class="mdi mdi-account-check"></i>
+                </button>
+                <button class="btn btn--m btn--red btn--icon" lx-ripple>
+                    <i class="mdi mdi-account-remove"></i>
+                </button>
+            </td>
         </tr>
 
         </tbody>
