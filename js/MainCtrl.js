@@ -9,7 +9,7 @@ angular.module('app.controller.MainCtrl', [])
             var startDate = moment($scope.startDate).format('YYYY-MM-DD');
             var endDate = moment($scope.endDate).format('YYYY-MM-DD');
 
-            MainServ.getService(startDate, endDate)
+            MainServ.getService2(startDate, endDate)
                 .then(function (rows) {
                     $scope.patient = rows;
                 }, function (err) {

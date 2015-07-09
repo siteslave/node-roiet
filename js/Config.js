@@ -26,7 +26,8 @@ angular.module('app.service.Config', ['app.service.Encrypt'])
                     pool: {
                         min: 5,
                         max: 100
-                    }
+                    },
+                    debug: true
                 })
             },
             getConfigPath: function () {

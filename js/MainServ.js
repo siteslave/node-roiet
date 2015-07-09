@@ -31,6 +31,35 @@ angular.module('app.service.MainServ', [])
 
                 return q.promise;
 
+            },
+
+            getService2: function (startDate, endDate) {
+
+                var q = $q.defer();
+                /*
+                 select o.hn, o.vstdate, p.pname, p.fname, p.lname
+                 from ovst as o
+                 inner join patient as p on p.hn=o.hn
+                 where o.vstdate between '2015-01-01' and '2015-01-10'
+                 */
+
+                db('ovst as o')
+                    .select('o.hn', 'o.vstdate', 'p.pname',
+                            'p.fname', 'p.lname')
+                    .innerJoin('patient as p', 'p.hn', 'o.hn')
+                    .whereBetween('o.vstdate', [startDate, endDate])
+
+                    .then(function (rows) {
+                        // success
+                        q.resolve(rows);
+                    })
+                    .catch(function (err) {
+                        // error
+                        q.reject(err);
+                    });
+
+                return q.promise;
+
             }
         }
 
